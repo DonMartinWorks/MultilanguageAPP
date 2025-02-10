@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'welcome' => 'Bienvenido'
+    'welcome' => 'Bienvenido',
+    'dashboard' => 'Panel',
 ];
