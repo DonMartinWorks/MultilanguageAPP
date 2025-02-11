@@ -24,7 +24,13 @@
                     <button id="hs-dropdown-with-icons" type="button"
                         class="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                         aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                        {{ __('messages.languages') }}
+                        {{ __('messages.language') }}&#58;&nbsp;@if (App::getLocale() == 'en')
+                            English
+                        @elseif (App::getLocale() == 'es')
+                            Español
+                        @elseif (App::getLocale() == 'fr')
+                            Français
+                        @endif
                         <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -35,20 +41,20 @@
                     <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 divide-y divide-gray-200"
                         role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-with-icons">
                         <div class="p-1 space-y-0.5">
-                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                                href="#">
+                            <a href="{{ route('switch-language', 'en') }}"
+                                class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
                                 <img src="https://flagsapi.com/GB/flat/64.png" class="h-8 w-8 rounded-sm">
                                 English
                             </a>
 
-                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                                href="#">
+                            <a href="{{ route('switch-language', 'es') }}"
+                                class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
                                 <img src="https://flagsapi.com/CL/flat/64.png" class="h-8 w-8 rounded-sm">
                                 Español
                             </a>
 
-                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                                href="#">
+                            <a href="{{ route('switch-language', 'fr') }}"
+                                class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
                                 <img src="https://flagsapi.com/FR/flat/64.png" class="h-8 w-8 rounded-sm">
                                 Français
                             </a>

@@ -3,5 +3,5 @@
 return [
     'welcome' => 'Bienvenido',
     'dashboard' => 'Panel',
-    'languages' => 'Lenguajes',
+    'language' => 'Idioma',
 ];
